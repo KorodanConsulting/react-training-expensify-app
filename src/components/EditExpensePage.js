@@ -32,13 +32,13 @@ export class EditExpensePage extends React.Component {
 };
 
 const mapStateToProps = (state, props) => ({
-	expense: state.expense.find((expense) => expense.id === props.match.params.id)
+	expense: state.expenses.find((expense) => expense.id === props.match.params.id)
 });
 
 
 const mapDispatchToProps = (dispatch, props) => ({
 	editExpense: (id, expense) => dispatch(editExpense(id, expense)),
-	removeExpense: (data) => dipatch(removeExpense(data))
+	removeExpense: (data) => dispatch(removeExpense(data))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditExpensePage);
